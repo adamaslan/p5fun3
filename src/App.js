@@ -2,11 +2,11 @@ import React from "react";
 import Sketch from "react-p5";
 
 function App() {
-  let a = 300;
-  let b = 300;
+  let a = 100;
+  let b = 20;
   let speed = 3;
   let setup = (p5, canvasParentRef) => {
-    let xyz = p5.createCanvas(1000, 800).parent(canvasParentRef);
+    let xyz = p5.createCanvas(1000, 200).parent(canvasParentRef);
     let x = (p5.windowWidth - p5.width) / 2;
     let y = (p5.windowHeight - p5.height) / 2;
     xyz.position(x, y);
@@ -14,21 +14,16 @@ function App() {
   let draw = (p5) => {
     p5.background("rgb(100%,0%,5%)");
     p5.stroke(255);
-    p5.strokeWeight(6);
+    p5.strokeWeight(15);
     p5.noFill();
-    p5.rect(a, b, 100, 100);
+    p5.rect(a, b, 150, 150);
     if (a >= p5.width) {
       speed = -4;
     }
-    if (a === 90) {
-      speed = 3;
+    if (a === 200) {
+      speed = 4;
     }
-    if (a >= p5.height) {
-      speed = -3;
-    }
-    if (a === 90) {
-      speed = 3;
-    }
+
     a = a + speed;
   };
   return (
