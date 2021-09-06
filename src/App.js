@@ -16,7 +16,7 @@ function App() {
     p5.stroke(255);
     p5.strokeWeight(15);
     p5.noFill();
-    p5.rect(a, b, 150, 150);
+    p5.rect(a, b, 175, 125);
     if (a >= p5.width) {
       speed = -4;
     }
