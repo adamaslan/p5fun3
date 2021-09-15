@@ -2,9 +2,9 @@ import React from "react";
 import Sketch from "react-p5";
 
 function App() {
-  let a = 100;
+  let a = 10;
   let b = 20;
-  let speed = 3;
+  let speed = 6;
   let setup = (p5, canvasParentRef) => {
     let xyz = p5.createCanvas(1000, 200).parent(canvasParentRef);
     let x = (p5.windowWidth - p5.width) / 2;
@@ -17,11 +17,11 @@ function App() {
     p5.strokeWeight(15);
     p5.noFill();
     p5.rect(a, b, 175, 125);
-    if (a >= p5.width) {
-      speed = -4;
+    if (a >= p5.width - 175) {
+      speed = -5;
     }
-    if (a === 200) {
-      speed = 4;
+    if (a <= 0) {
+      speed = 8;
     }
 
     a = a + speed;
