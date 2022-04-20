@@ -14,9 +14,11 @@ function App() {
   let draw = (p5) => {
     p5.background("rgb(100%,0%,5%)");
     p5.stroke(255);
-    p5.strokeWeight(15);
+    p5.strokeWeight(5);
     p5.noFill();
-    p5.rect(a, b, 175, 125);
+    p5.textSize(30);
+
+    p5.text("A D A M", a, b, 175, 85);
     if (a >= p5.width - 175) {
       speed = -5;
     }
@@ -26,6 +28,7 @@ function App() {
 
     a = a + speed;
   };
+
   return (
     <div className="App">
       <Sketch setup={setup} draw={draw} className="App" />
